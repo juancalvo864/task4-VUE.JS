@@ -1,0 +1,344 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    /* background-color: rgba(0, 0, 0, 0.865); */
+    background: url(https://i.pinimg.com/736x/14/99/40/14994037681874402d2e414bd6ad0bca.jpg);
+    background-size: cover;
+    min-height: 100vh;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-logo-header {
+    width: 10rem;
+}
+
+.logo {
+    padding: 1rem;
+    width: 100%;
+}
+
+li a:hover {
+    background-color: rgb(120, 119, 117);
+    border: 1px solid black;
+}
+
+@media (max-width:768px) {
+    header {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .logo {
+        width: 10rem;
+    }
+
+
+}
+
+/*----------------inicio Home---------------*/
+
+.titulo {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://live-production.wcms.abc-cdn.net.au/09686d45bb8999c3d2fbf92e2e6cfea5?impolicy=wcms_crop_resize&cropH=1856&cropW=3300&xPos=0&yPos=344&width=862&height=485);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-size: 4rem;
+    color: white;
+    font-weight: bolder;
+    height: 38vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check {
+    color: white;
+    font-size: 0.9rem;
+}
+
+#searchBox {
+    width: 15vw;
+}
+
+.alert {
+    font-size: 4rem;
+    color: white !important;
+
+}
+
+
+.box-cards {
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2rem
+}
+
+.icono-contacto {
+    width: 3rem;
+}
+
+
+.card {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 16rem;
+    gap: 1rem;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.img-card {
+    margin-top: 1rem;
+    width: 13rem;
+    height: 10rem;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.precio-compra {
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.precio-compra p {
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+
+@media (max-width:768px) {
+    #searchBox {
+        width: 12rem;
+    }
+
+}
+
+
+/*---------------------inicio contact-------------*/
+
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+
+.form-contact {
+    border-radius: 15px;
+    width: 25rem;
+    background-color: white;
+    padding: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 5px 5px 5px 0px rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(255, 255, 255, 0.75);
+}
+
+.box-contact-form {
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.form-contact input {
+    width: 23rem;
+}
+
+.mb-3 {
+    width: 23rem;
+}
+
+.submit {
+    width: 5rem !important;
+}
+
+@media(max-width:424px) {
+    .form-contact input {
+        width: 18rem;
+    }
+
+    .mb-3 {
+        width: 18rem;
+    }
+
+    .form-contact {
+        width: 20rem;
+    }
+
+}
+
+/*---------------------fin Contact------------------------*/
+
+/*---------------------comienzo Stats---------------------*/
+
+.main-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabla-info-stats {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.encabezado-tabla {
+    padding-left: 1rem;
+    background-color: rgb(243, 211, 154);
+    color: black;
+    font-size: 2rem;
+    height: 10vh;
+}
+
+tr th {
+    height: 6vh;
+    width: 30%;
+    border: 1px solid white;
+    color: white;
+    font-size: 1.2rem;
+}
+
+tr td {
+    border: 1px solid white;
+    color: white;
+    height: 4vh;
+}
+
+table {
+    width: 90%;
+}
+
+/*--------------------inicio Details--------------------*/
+
+.main-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-description-card {
+    background-color: white;
+    min-height: 70vh;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 0px rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(255, 255, 255, 0.75);
+}
+
+.box-description-card h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.pic-and-description {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+}
+
+.img-description {
+    border-radius: 5px;
+    width: 35vw;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.37);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.37);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.37);
+}
+
+.description-card {
+    width: 35%;
+}
+
+@media(min-width:1340px) {
+    .img-description {
+        border-radius: 5px;
+        width: 28vw;
+    }
+}
+
+@media(max-width:768px) {
+    .box-description-card {
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+        width: 85vw;
+        padding: 2rem;
+    }
+
+    .pic-and-description {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .description-card {
+        width: 75%;
+    }
+
+    .img-description {
+        border-radius: 5px;
+        width: 55vw;
+    }
+
+}
+
+/*-------------------inicio footer---------------------*/
+
+footer {
+    height: 8vh;
+    background-color: rgba(235, 227, 155, 0.877);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer h3 {
+    text-align: center;
+    width: 15rem;
+}
+
+footer div {
+    padding-left: 1rem;
+    width: 15rem;
+    display: flex;
+    justify-content: space-around;
+}

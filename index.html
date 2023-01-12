@@ -11,7 +11,8 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="hidden">
+
     <header class="navbar-dark bg-dark">
         <div class="box-logo-header">
             <a href="#"><img src="./assets/images/LogoAmazingEvents.png" alt="logo" class="logo"></a>
@@ -45,34 +46,39 @@
         </nav>
     </header>
     <main id="app">
-        <p class="titulo">Home</p>
+        <h1 class="titulo">Home</h1>
         <div class="d-flex justify-content-between flex-wrap gap-3 check">
-            <div class="ps-3 " id="checkpoint">
-                <div class="form-check form-check-inline">
+            <div class="ps-3 ">
+                <div v-if="singleCategory" class="form-check form-check-inline checkItem"
+                    v-for="category of singleCategory">
                     <label class="form-check-label">
-                        <input class="form-check-input inlineCheckbox1" type="checkbox" value="${opcion}">
-                        ${opcion}
+                        <input class="form-check-input " type="checkbox" :value="category" v-model="checked"
+                            @change="crossFilter">{{category}}
                     </label>
                 </div>
             </div>
             <form class="d-flex ps-3 search-box " role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBox">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBox"
+                    v-model="valueSearch" @keyup="crossFilter">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
+
         <div class="box-cards " id="cards-container">
-            <article class="card">
-                <img src="${card.image} " class=" img-card" alt="${card.name}">
+            <article class="card" v-if="eventFilter.length !== 0" v-for="event of eventFilter">
+                <img v-bind:src="event.image" class=" img-card" :alt="event.name">
                 <div class="card-body">
-                    <h5 class="card-title">${card.name} </h5>
-                    <p class="card-text">${card.description} </p>
+                    <h5 class="card-title">{{event.name}} </h5>
+                    <p class="card-text">{{event.description}} </p>
                 </div>
                 <div class="precio-compra">
-                    <p>Price : usd ${card.price}</p>
-                    <a href="./details.html?id=${card._id}" class="btn btn-primary">Details</a>
+                    <p>Price : usd {{event.price}} </p>
+                    <a :href="'./details.html?id='+event._id" class="btn btn-primary">Details</a>
                 </div>
             </article>
-
+            <article v-else="eventFilter">
+                <h2 class="alert">WAS NOT FOUND</h2>
+            </article>
 
         </div>
 
@@ -99,6 +105,7 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/home.js"></script>
 </body>
 
 </html>
