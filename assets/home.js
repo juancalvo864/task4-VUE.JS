@@ -9,6 +9,7 @@ createApp({
             singleCategory: [],
             valueSearch: "",
             checked: [],
+            eventFilters: [],
             eventFilter: [],
 
 
@@ -22,12 +23,13 @@ createApp({
                 console.log(this.dataEvents)
                 this.singleCategory = [...new Set(this.dataEvents.events.map(event => event.category))]
                 this.filterTitle(this.dataEvents)
+                this.eventFilter = [...this.eventFilters]
             })
             .catch(err => console.log(err))
     },
     methods: {
         crossFilter: function () {
-            let filtradosPorBusqueda = this.dataEvents.events.filter(event => event.name.toLowerCase().startsWith(this.valueSearch.toLowerCase()));
+            let filtradosPorBusqueda = this.eventFilters.filter(event => event.name.toLowerCase().startsWith(this.valueSearch.toLowerCase()));
             if (this.checked.length === 0) {
                 this.eventFilter = filtradosPorBusqueda
             } else {
@@ -39,11 +41,11 @@ createApp({
             const title = document.querySelector('title')
 
             if (title.innerText.toLowerCase().includes('home')) {
-                this.eventFilter = eventsDate.events
+                this.eventFilters = eventsDate.events
             } else if (title.innerText.toLowerCase().includes('upcoming')) {
-                this.eventFilter = eventsDate.events.filter(event => event.date > eventsDate.currentDate)
+                this.eventFilters = eventsDate.events.filter(event => event.date > eventsDate.currentDate)
             } else if (title.innerText.toLowerCase().includes('past')) {
-                this.eventFilter = eventsDate.events.filter(event => event.date < eventsDate.currentDate)
+                this.eventFilters = eventsDate.events.filter(event => event.date < eventsDate.currentDate)
                 console.log(this.eventFilter)
             }
 
